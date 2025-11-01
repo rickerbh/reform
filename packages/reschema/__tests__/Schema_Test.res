@@ -61,7 +61,7 @@ describe("Schema", (. ()) => {
     | None => ()
     | Some((field, error)) => {
         expect(field)->toStrictEqual(Field(Email))->ignore
-        expect(error)->toStrictEqual(Error("Invalid email."))->ignore
+        expect(error)->toStrictEqual(Error("Invalid email"))->ignore
       }
     }
   })
