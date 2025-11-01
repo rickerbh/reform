@@ -24,8 +24,8 @@ module Lenses = {
 
 module CustomSchema = ReSchema.Make(Lenses)
 
-describe("Schema", (. ()) => {
-  it("validateOne", (. ()) => {
+describe("Schema", () => {
+  it("validateOne", () => {
     let schema = {
       open CustomSchema.Validation
 

@@ -1,4 +1,4 @@
 lib
-*.bs.js
+*.res.js
 __tests__
 .merlin

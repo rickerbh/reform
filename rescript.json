@@ -6,6 +6,9 @@
       "subdirs": true
     }
   ],
+    "jsx": {
+        "version": 4
+    },
   "package-specs": [
     {
       "module": "commonjs",
@@ -15,6 +18,6 @@
   "warnings": {
     "error": false
   },
-  "suffix": ".bs.js",
-  "bs-dependencies": ["@rescriptbr/reform", "@rescriptbr/reschema"]
+  "suffix": ".res.js",
+  "bs-dependencies": ["@rickerbh/reform", "@rickerbh/reschema"]
 }
