@@ -69,6 +69,6 @@ _esy
 # Docusaurus
 build
 
-*.bs.js
+*.res.js
 
 .DS_STORE

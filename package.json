@@ -51,14 +51,13 @@
     "res:watch": "rewatch watch",
     "res:build": "rewatch build",
     "res:clean": "rewatch clean",
-    "res:setup": "yarn workspace @rescriptbr/reform res:setup",
-    "test": "yarn workspace @rescriptbr/reform test",
-    "test:watch": "yarn workspace @rescriptbr/reform test:watch",
+    "res:setup": "yarn workspace @rickerbh/reform res:setup",
+    "test": "yarn workspace @rickerbh/reform test",
+    "test:watch": "yarn workspace @rickerbh/reform test:watch",
     "lint:staged": "lint-staged",
     "demo:build": "yarn workspace demo build"
   },
   "dependencies": {
-    "@rolandpeelen/rewatch": "0.0.12-0c3740d.0",
-    "rescript": "^11.0.0"
+    "rescript": "^12.0.0-rc.3"
   }
 }

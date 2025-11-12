@@ -52,56 +52,54 @@ module Make = (Lenses: Lenses) => {
       )
     }
 
-    let custom = (predicate, field) => [Custom({field: field, predicate: predicate})]
+    let custom = (predicate, field) => [Custom({field, predicate})]
 
-    let true_ = (~error=?, field) => [True({field: field, error: error})]
+    let true_ = (~error=?, field) => [True({field, error})]
 
-    let false_ = (~error=?, field) => [False({field: field, error: error})]
+    let false_ = (~error=?, field) => [False({field, error})]
 
-    let email = (~error=?, field) => [Email({field: field, error: error})]
+    let email = (~error=?, field) => [Email({field, error})]
 
-    let nonEmpty = (~error=?, field) => [StringNonEmpty({field: field, error: error})]
+    let nonEmpty = (~error=?, field) => [StringNonEmpty({field, error})]
 
     let string = (~min=?, ~minError=?, ~max=?, ~maxError=?, field) => {
       mergeValidators([
         (
           min,
           min => StringMin({
-            field: field,
-            min: min,
+            field,
+            min,
             error: minError,
           }),
         ),
         (
           max,
           max => StringMax({
-            field: field,
-            max: max,
+            field,
+            max,
             error: maxError,
           }),
         ),
       ])
     }
 
-    let regExp = (~error=?, ~matches, field) => [
-      StringRegExp({field: field, matches: matches, error: error}),
-    ]
+    let regExp = (~error=?, ~matches, field) => [StringRegExp({field, matches, error})]
 
     let float = (~min=?, ~minError=?, ~max=?, ~maxError=?, field) => {
       mergeValidators([
         (
           min,
           min => FloatMin({
-            field: field,
-            min: min,
+            field,
+            min,
             error: minError,
           }),
         ),
         (
           max,
           max => FloatMax({
-            field: field,
-            max: max,
+            field,
+            max,
             error: maxError,
           }),
         ),
@@ -113,16 +111,16 @@ module Make = (Lenses: Lenses) => {
         (
           min,
           min => IntMin({
-            field: field,
-            min: min,
+            field,
+            min,
             error: minError,
           }),
         ),
         (
           max,
           max => IntMax({
-            field: field,
-            max: max,
+            field,
+            max,
             error: maxError,
           }),
         ),
@@ -174,7 +172,7 @@ module Make = (Lenses: Lenses) => {
       let value = Lenses.get(values, field)
       (
         Field(field),
-        Js.Re.test_(ReSchemaRegExp.email, value)
+        RegExp.test(ReSchemaRegExp.email, value)
           ? Valid
           : Error(error->Belt.Option.getWithDefault(i18n.email(~value))),
       )
@@ -191,7 +189,7 @@ module Make = (Lenses: Lenses) => {
       let value = Lenses.get(values, field)
       (
         Field(field),
-        Js.Re.test_(Js.Re.fromString(matches), value)
+        RegExp.test(RegExp.fromString(matches), value)
           ? Valid
           : Error(error->Belt.Option.getWithDefault(i18n.stringRegExp(~value, ~pattern=matches))),
       )
@@ -199,7 +197,7 @@ module Make = (Lenses: Lenses) => {
       let value = Lenses.get(values, field)
       (
         Field(field),
-        Js.String.length(value) >= min
+        String.length(value) >= min
           ? Valid
           : Error(error->Belt.Option.getWithDefault(i18n.stringMin(~value, ~min))),
       )
@@ -207,7 +205,7 @@ module Make = (Lenses: Lenses) => {
       let value = Lenses.get(values, field)
       (
         Field(field),
-        Js.String.length(value) <= max
+        String.length(value) <= max
           ? Valid
           : Error(error->Belt.Option.getWithDefault(i18n.stringMax(~value, ~max))),
       )

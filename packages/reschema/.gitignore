@@ -1,4 +1,4 @@
 lib/
-*.bs.js
+*.res.js
 .merlin
 node_modules

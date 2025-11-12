@@ -1,10 +1,10 @@
 {
-  "name": "@rescriptbr/reform",
-  "version": "12.1.0",
-  "description": "Reasonably making forms with ReScript and React sound good",
-  "repository": "git@github.com:reasonbr/reform.git",
-  "homepage": "https://github.com/reasonbr/reform#readme",
-  "bugs": "https://github.com/reasonbr/reform/issues",
+  "name": "@rickerbh/reform",
+  "version": "13.0.0",
+  "description": "Reasonably making forms with ReScript and React sound good. FORKED, for dependency/rescript updates",
+  "repository": "git@github.com:rickerbh/reform.git",
+  "homepage": "https://github.com/rickerbh/reform#readme",
+  "bugs": "https://github.com/rickerbh/reform/issues",
   "keywords": [
     "reason",
     "bucklescript",
@@ -20,23 +20,29 @@
   "author": "Gabriel Rubens <fakenickels.dev>",
   "license": "MIT",
   "peerDependencies": {
-    "@rescript/react": "^0.12.0",
-    "rescript": "^11.0.0"
+    "@rescript/react": "^0.13.0",
+    "rescript": "^12.0.0-rc.3"
   },
   "devDependencies": {
-    "@rescript/react": "^0.12.0",
-    "rescript": "^11.0.0"
+    "@rescript/react": "^0.13.0",
+    "jest": "30.2.0",
+    "react-test-renderer": "18.3.1",
+    "rescript": "^12.0.0-rc.3"
   },
   "scripts": {
     "start": "yarn res:watch",
     "res:clean": "rescript clean",
     "res:build": "yarn res:clean; rescript build",
     "res:watch": "yarn res:clean; rescript build -w",
-    "res:setup": "yarn rescript build"
+    "res:setup": "yarn rescript build",
+    "test:rescript": "rescript build",
+    "test": "yarn test:rescript && jest",
+    "test:watch": "yarn test:rescript && jest --watch",
+    "test:coverage": "yarn test:rescript && jest --coverage"
   },
   "dependencies": {
-    "@rescriptbr/reschema": "^3.0.3",
-    "rescript": "^11.0.0",
+    "@rickerbh/reschema": "4.0.0",
+    "rescript": "^12.0.0-rc.3",
     "rescript-react-update": "5.0.2"
   }
 }

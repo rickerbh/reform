@@ -1,0 +1,24 @@
+{
+  "name": "@rickerbh/reschema",
+  "dependencies": [],
+  "dev-dependencies": [],
+  "ppx-flags": [],
+  "refmt": 3,
+  "compiler-flags": [],
+  "package-specs": {
+    "module": "es6",
+    "in-source": true
+  },
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    },
+    {
+      "dir": "__tests__",
+      "type": "dev",
+      "subdirs": true
+    }
+  ],
+  "suffix": ".res.js"
+}

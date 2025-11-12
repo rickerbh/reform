@@ -1,3 +1,5 @@
 module.exports = {
-  testMatch: ['**/*_Test.bs.js']
+  roots: ["<rootDir>/src/", "<rootDir>/__tests__/"],
+  testMatch: ['**/*_Test.res.js'],
+  testPathIgnorePatterns: ['<rootDir>/lib/']
 };

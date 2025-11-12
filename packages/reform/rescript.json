@@ -1,0 +1,31 @@
+{
+  "name": "@rickerbh/reform",
+  "jsx": {
+    "version": 4
+  },
+  "dependencies": [
+    "@rescript/react",
+    "@rickerbh/reschema",
+    "rescript-react-update"
+  ],
+  "dev-dependencies": [],
+  "package-specs": {
+    "module": "es6",
+    "in-source": true
+  },
+  "suffix": ".res.js",
+  "warnings": {
+    "number": "-44-45"
+  },
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    },
+    {
+      "dir": "__tests__",
+      "type": "dev",
+      "subdirs": true
+    }
+  ]
+}
