@@ -1,6 +1,6 @@
 {
   "name": "@rickerbh/reform",
-  "version": "13.0.0",
+  "version": "13.0.1",
   "description": "Reasonably making forms with ReScript and React sound good. FORKED, for dependency/rescript updates",
   "repository": "git@github.com:rickerbh/reform.git",
   "homepage": "https://github.com/rickerbh/reform#readme",
@@ -19,6 +19,7 @@
   ],
   "author": "Gabriel Rubens <fakenickels.dev>",
   "license": "MIT",
+  "main": "src/ReForm.res.js",
   "peerDependencies": {
     "@rescript/react": "^0.13.0",
     "rescript": "^12.0.0-rc.3"

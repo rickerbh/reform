@@ -1,4 +1,3 @@
 lib
-*.res.js
 __tests__
 .merlin
