@@ -1,6 +1,6 @@
 {
   "name": "@rickerbh/reschema",
-  "version": "4.0.0",
+  "version": "4.0.2",
   "description": "Schema validation made easy for ReScript. FORKED, for maintenance/dependencies.",
   "repository": "git@github.com:rickerbh/reform.git",
   "homepage": "https://github.com/rickerbh/reform#readme",

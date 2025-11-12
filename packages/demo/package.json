@@ -11,7 +11,7 @@
     "lenses-ppx": "6.1.10",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "@rickerbh/reschema": "4.0.0",
+    "@rickerbh/reschema": "4.0.2",
     "rescript": "^11.0.0",
     "vite": "2.6.4"
   },

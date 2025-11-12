@@ -3,24 +3,14 @@ name: publish reschema on npm
 on:
   release:
     types: [created]
+  workflow_dispatch:
 
 permissions:
   id-token: write
   contents: read
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-node@v6
-        with:
-          node-version: 24
-      - run: yarn
-      - run: cd packages/reschema && yarn rescript:build
-
   reschema-publish-npm:
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -28,4 +18,4 @@ jobs:
         with:
           node-version: 24
           registry-url: https://registry.npmjs.org/
-      - run: cd packages/reschema && npm publish --access=public
+      - run: cd packages/reschema && yarn install && yarn rescript:build && npm publish --access=public

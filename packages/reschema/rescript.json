@@ -6,7 +6,7 @@
   "refmt": 3,
   "compiler-flags": [],
   "package-specs": {
-    "module": "es6",
+    "module": "esmodule",
     "in-source": true
   },
   "sources": [

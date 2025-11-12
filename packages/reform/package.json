@@ -41,7 +41,7 @@
     "test:coverage": "yarn test:rescript && jest --coverage"
   },
   "dependencies": {
-    "@rickerbh/reschema": "4.0.0",
+    "@rickerbh/reschema": "4.0.2",
     "rescript": "^12.0.0-rc.3",
     "rescript-react-update": "5.0.2"
   }
